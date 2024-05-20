@@ -1,0 +1,103 @@
+.heading-field, .title-field{
+
+    width : 600px;
+
+    height : 40px;
+
+}
+
+.heading-field, .text-field, .code-field, .title-field, .des-field{
+
+    margin-left : 25%;
+
+    margin-top: 20px;
+
+    margin-bottom : 20px;
+
+    font-size: 20px;
+
+    text-align: center;
+
+    padding : 20px;
+}
+
+.text-field, .code-field, .des-field{
+
+    width : 600px;
+
+    height : 200px;
+
+}
+
+
+.des-field{
+
+    height : 100px;
+}
+
+button{
+
+    width : 200px;
+
+    height : 70px;
+
+    background-color: green;
+
+    color : white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border-radius: 20px;
+
+    border-color: white;
+}
+
+.remove-btn{
+
+    background-color: red;
+
+    width : 100px;
+
+    height : 50px;
+
+ 
+}
+
+.remove-btn:hover{
+
+    background-color: orangered;
+}
+
+.submit-btn{
+    background-color: darkblue;
+
+    margin-left : 55%;
+
+    margin-top : 20px;
+
+    margin-bottom: 10px;
+}
+
+.submit-btn:hover{
+
+    background-color: rgb(7, 108, 141);
+}
+.heading-btn, .code-btn, .text-btn{
+
+    margin : 20px;
+
+}
+
+.heading-btn:hover, .code-btn:hover, .text-btn:hover{
+
+    background-color: rgb(23, 173, 23);
+}
+
+
+
+.header-btns{
+
+    margin-left : 280px;
+}
