@@ -78,10 +78,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}'''
+
+DATABASES = {
+    'default':{
+        'ENGINE' : 'djongo',
+        'NAME' : 'BlogWritingPlatform',
+        'CLIENT' : {
+            'host' : '127.0.0.1:27017'
+        }
     }
 }
 
@@ -107,6 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
