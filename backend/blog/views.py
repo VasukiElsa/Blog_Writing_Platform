@@ -39,16 +39,3 @@ def inputfieldView(request):
 
 
     
-'''    elif request.method == 'POST':
-        serializer = InputFieldSerializer(data=request.data, many=True)
-        if serializer.is_valid():
-            for inputField_data in serializer.validated_data:
-                inputField_serializer = InputFieldSerializer(data=inputField_data)
-                if inputField_serializer.is_valid():
-                    inputField_serializer.save()
-                else:
-                    return Response(inputField_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-                return Response(serializer.data, status = status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-            '''
