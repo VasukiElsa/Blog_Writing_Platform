@@ -1,8 +1,27 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import AdminPage from './AdminPage.js';
+import CoverPage from './CoverPage.js';
+import ContentPage from './ContentPage.js';
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const route = createBrowserRouter([
+    {
+        path : '/',
+        element : <CoverPage />,
+    },
 
-root.render(<AdminPage />);
+    {
+        path : '/contentpage',
+        element : <ContentPage />
+    }
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+
+    <React.StrictMode>
+        <RouterProvider router = {route} />
+    </React.StrictMode>
+);
