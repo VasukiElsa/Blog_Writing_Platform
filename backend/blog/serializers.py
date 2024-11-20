@@ -6,7 +6,7 @@ class HeaderSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Header
-        fields = ['id','title', 'description', 'created_at']
+        fields = ['id','title', 'description', 'image', 'created_at']
 
 
 class InputFieldSerializer(serializers.ModelSerializer):
