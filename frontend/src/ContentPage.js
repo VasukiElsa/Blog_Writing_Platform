@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import {useLocation} from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './style.css';
 
 const ContentPage = () => {
 
     const location = useLocation();
+    const navigate = useNavigate();
     
     const [inputFields, setInputFields] = useState([]);
 
@@ -65,6 +67,10 @@ const ContentPage = () => {
             console.error(error);
         });
 
+        navigate('/home');
+
+        setInputFields([]);
+
 
     };
 
@@ -80,9 +86,9 @@ const ContentPage = () => {
 
                 <div className='header-btns'>
 
-                    <button className='heading-btn' onClick={addHeading}>Heading</button>
-                    <button className='text-btn' onClick={addText}>Text</button>
-                    <button className='code-btn' onClick={addCode}>Code</button>
+                    <button type = "button" className='heading-btn' onClick={addHeading}>Heading</button>
+                    <button type = "button" className='text-btn' onClick={addText}>Text</button>
+                    <button type = "button" className='code-btn' onClick={addCode}>Code</button>
 
                 </div>
 
