@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import CoverPage from './CoverPage.js';
 import ContentPage from './ContentPage.js';
+import HomePage from './HomePage.js';
+import Documentation from './Documentation.js';
 
 const route = createBrowserRouter([
     {
@@ -14,6 +16,16 @@ const route = createBrowserRouter([
     {
         path : '/contentpage',
         element : <ContentPage />
+    },
+
+    {
+        path : '/home',
+        element : <HomePage />
+    },
+
+    {
+        path : 'read',
+        element : <Documentation />
     }
 ]);
 
