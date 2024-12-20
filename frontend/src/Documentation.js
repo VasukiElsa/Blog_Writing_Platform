@@ -1,4 +1,6 @@
 import { useLocation } from 'react-router-dom';
+import './style.css';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Documentation = () => {
 
@@ -11,28 +13,59 @@ const Documentation = () => {
         return { __html: formattedValue };
     };
 
+    const header = result.filter(item => item.label === "heading");
+
     return(
-        <div className="blog-container">
+    <body>
+        <nav className = "nav-bar">
+            <header className="nav-header">{title}</header>
+            {header.map((input) => (
+                <AnchorLink href={`#${input.content}`} className="nav-link">
+                    {input.content}
+                </AnchorLink>
+            ))}
+        </nav>
+
+
+        <div className="main-doc">
 
             <h2 className="blog-title">{title}</h2>
             <img className="blog-cover" src={`http://127.0.0.1:8000${image}`} alt={title}/>
 
-            {result ? (
-                <ul>
-                    {result.map((item, index) => (
+            {result.map((input) => {
 
-                        <li className="blog-list" key={index}>
-                            <p className="label-el">{item.label}</p>
-                            <p className="value-el" dangerouslySetInnerHTML={formatValue(item.content)} />
-                        </li>
+                switch(input.label){
+                    case "heading":
+                        return(
+                            <section className="main-section">
+                                <header id= {input.content} dangerouslySetInnerHTML={formatValue(input.content)} />
+                            </section>
+                        );
+                    case "text":
+                        return(
+                            <section className="main-section">
+                                <p className="text-section" dangerouslySetInnerHTML={formatValue(input.content)} />
+                            </section>
+                        );
+                    case "code":
+                        return(
+                            <section className="code-section">
+                                <p dangerouslySetInnerHTML={formatValue(input.content)} />
+                            </section>
+                        );
+                    default:
+                        return null;
+                }
+            })
 
-                    ))}
-                </ul>
-            ) : (
-                <p>No data received</p>
-            )
             }
+
+            <div className="bottom-spacer"></div>
+
+            
         </div>
+    </body>
+
     );
 
 
