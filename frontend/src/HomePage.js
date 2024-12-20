@@ -49,7 +49,7 @@ const HomePage = () => {
         <>
 
         <header>
-            <h1 id="heading">Blogs</h1>
+            <h1 id="home-heading">Blogs</h1>
         </header>
 
         <div className="image-container">
