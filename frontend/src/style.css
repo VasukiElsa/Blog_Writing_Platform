@@ -3,104 +3,137 @@
     margin:0;
     padding:0;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    color: black;
-    background-color:aliceblue;
-    line-height: 1.5;
+    color: #333;
+    background-color: #f4f8fb;
+    line-height: 1.6;
     scroll-behavior: smooth;
   }
 
-
-
-.heading-field, .title-field{
-
-    width : 600px;
-    height : 40px;
-
+/* Animation Keyframes */
+@keyframes flyInTop{
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
+
 
 #home-heading{
     text-align: center;
     margin-top : 50px;
     font-size : 60px;
+    color: #2b4d66;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     
-}
-
-
-.heading-field, .text-field, .code-field, .title-field, .des-field{
-
-    margin-left : 25%;
-    margin-top: 20px;
-    margin-bottom : 20px;
-    font-size: 20px;
-    text-align: center;
-    padding : 20px;
-}
-
-.text-field, .code-field, .des-field{
-
-    width : 600px;
-    height : 200px;
-
-}
-
-
-.des-field{
-
-    height : 100px;
 }
 
 button{
 
     width : 200px;
     height : 70px;
-    background-color: green;
+    background-color: #4caf50;
     color : white;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 20px;
-    border-color: white;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #3e8e41;
+    transform: scale(1.05);
+}
+
+
+
+.input-container{
+   margin: 120px auto; 
+   max-width: 900px; 
+
+}
+
+
+.heading-field, .text-field, .code-field{
+
+    font-size: 20px; 
+    padding: 10px; 
+    width: 80%; 
+    border:none;
+    outline:none;
+
+}
+
+
+
+.heading-field{
+    height : 50px;
+}
+
+.text-field, .code-field{
+    height : 150px;
+    resize: vertical;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin: 20px 0;
+    margin-left : 90px; 
+    animation: flyInTop 0.5s ease-out; 
 }
 
 .remove-btn{
 
-    background-color: red;
+    background-color: #d9534f;
     width : 100px;
-    height : 50px;
-
- 
 }
+
+
 
 .remove-btn:hover{
 
-    background-color: orangered;
+    background-color: #c9302c;
 }
 
-.submit-btn{
-    background-color: darkblue;
-    margin-left : 55%;
-    margin-top : 20px;
-    margin-bottom: 10px;
+.submit-btn {
+    display: block;
+    margin: 30px auto;
+    width: 250px; 
+    background-color: #0275d8; 
 }
 
 .submit-btn:hover{
 
-    background-color: rgb(7, 108, 141);
+    background-color: #025aa5;
 }
 
 .heading-btn, .code-btn, .text-btn{
 
     margin : 20px;
+    background-color: #5bc0de;
 
 }
 
 .heading-btn:hover, .code-btn:hover, .text-btn:hover{
 
-    background-color: rgb(23, 173, 23);
+    background-color: #31b0d5; 
 }
 
 .header-btns{
-
-    margin-left : 280px;
+    top : 0;
+    margin-left :50%;
+    position : fixed;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+   
 }
 
 img {

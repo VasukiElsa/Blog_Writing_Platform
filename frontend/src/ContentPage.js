@@ -11,7 +11,6 @@ const ContentPage = () => {
     
     const [inputFields, setInputFields] = useState([]);
 
-
     const handleFormChange = (index, event) => {
 
         let data = [...inputFields];
@@ -74,12 +73,6 @@ const ContentPage = () => {
 
     };
 
-
-
-    
-
-
-
     return(
         <div>
             <form onSubmit={publish}>
@@ -92,6 +85,8 @@ const ContentPage = () => {
 
                 </div>
 
+                <div className='input-container'>
+
                 {inputFields.map((input, index) => {
 
                     switch(input.label){
@@ -99,11 +94,12 @@ const ContentPage = () => {
                         case "heading":
                             return(
 
-                                <div key={index}>
+                                <div className="input-wrapper" key={index}>
 
-                                    <input type="text" className="heading-field" name="heading" value={input.content} onChange={event=> handleFormChange(index, event)} placeholder='give the heading here...'/>
+                                    <input type="text" className="heading-field" name="heading" value={input.content} onChange={event=> handleFormChange(index, event)} 
+                                    placeholder='Add Heading'/>
 
-                                    <button className="remove-heading-btn" onClick={()=>removeFields(index)}>Remove</button>
+                                    <button className="remove-btn" onClick={()=>removeFields(index)}>Remove</button>
 
                                 </div>
 
@@ -112,11 +108,12 @@ const ContentPage = () => {
                         case "text":
                             return(
 
-                                <div key={index}>
+                                <div className="input-wrapper" key={index}>
 
-                                    <textarea className="text-field" name="text" value={input.content} onChange={ event => handleFormChange(index, event)} placeholder = 'write your words here...' />
+                                    <textarea className="text-field" name="text" value={input.content} onChange={ event => handleFormChange(index, event)}
+                                    placeholder='Add Text'/>
 
-                                    <button className="remove-text-btn" onClick = {()=>removeFields(index)}>Remove</button>
+                                    <button className="remove-btn" onClick = {()=>removeFields(index)}>Remove</button>
 
                                 </div>
                             )
@@ -124,11 +121,12 @@ const ContentPage = () => {
                         case "code":
                             return(
     
-                                <div key={index}>
+                                <div className="input-wrapper" key={index}>
     
-                                    <textarea className="code-field" name="code" value={input.content} onChange={event=> handleFormChange(index, event)} placeholder='add your code here...'/>
+                                    <textarea className="code-field" name="code" value={input.content} onChange={event=> handleFormChange(index, event)}
+                                        placeholder='Add code'/>
     
-                                    <button className="remove-code-btn" onClick={()=>removeFields(index)}>Remove</button>
+                                    <button className="remove-btn" onClick={()=>removeFields(index)}>Remove</button>
     
                                  </div>
                             )
@@ -138,6 +136,7 @@ const ContentPage = () => {
                     }
 
                 })}
+                </div>
 
             </form>
 
