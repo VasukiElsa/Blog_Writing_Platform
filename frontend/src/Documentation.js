@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './style.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -8,6 +8,8 @@ const Documentation = () => {
     const { result, title, image } = location.state;
     console.log("THIS IS LOCATION", location);
 
+    const navigate = useNavigate();
+
     const formatValue = (value) => {
         const formattedValue = value.replace(/\r\n|\r|\n/g, '<br />');
         return { __html: formattedValue };
@@ -15,8 +17,13 @@ const Documentation = () => {
 
     const header = result.filter(item => item.label === "heading");
 
+    const dashboard = () => {
+        navigate('/home');
+    }
+
     return(
-    <body>
+        <>   
+    
         <nav className = "nav-bar">
             <header className="nav-header">{title}</header>
             {header.map((input) => (
@@ -28,6 +35,7 @@ const Documentation = () => {
 
 
         <div className="main-doc">
+            <button className="home-btn" type="button" onClick={dashboard}>HOME</button>
 
             <h2 className="blog-title">{title}</h2>
             <img className="blog-cover" src={`http://127.0.0.1:8000${image}`} alt={title}/>
@@ -49,10 +57,19 @@ const Documentation = () => {
                         );
                     case "code":
                         return(
-                            <section className="code-section">
-                                <p dangerouslySetInnerHTML={formatValue(input.content)} />
-                            </section>
+                            <div className="syntax-bar">
+                                <pre>
+                                   <code dangerouslySetInnerHTML={formatValue(input.content)} />
+                                </pre>
+                            </div>
                         );
+
+                    case "image":
+                        return(
+                            <section className="main-section">
+                                <img className="img-bar" src={`http://127.0.0.1:8000${input.image}`}  alt="preview" />
+                            </section>
+                        )
                     default:
                         return null;
                 }
@@ -64,7 +81,9 @@ const Documentation = () => {
 
             
         </div>
-    </body>
+
+        </>
+    
 
     );
 
