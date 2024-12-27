@@ -6,11 +6,12 @@ import CoverPage from './CoverPage.js';
 import ContentPage from './ContentPage.js';
 import HomePage from './HomePage.js';
 import Documentation from './Documentation.js';
+import Authentication from './Authentication.js';
 
 const route = createBrowserRouter([
     {
         path : '/',
-        element : <CoverPage />,
+        element : <HomePage />,
     },
 
     {
@@ -19,13 +20,23 @@ const route = createBrowserRouter([
     },
 
     {
+        path : '/write',
+        element : <CoverPage />
+    },
+
+    {
         path : '/home',
         element : <HomePage />
     },
 
     {
-        path : 'read',
+        path : '/read',
         element : <Documentation />
+    },
+
+    {
+        path : '/authentication',
+        element : <Authentication />
     }
 ]);
 
