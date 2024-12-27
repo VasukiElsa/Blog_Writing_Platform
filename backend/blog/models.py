@@ -16,3 +16,5 @@ class InputField(models.Model):
     title = models.CharField(max_length=150)
     label = models.CharField(max_length=50)
     content = models.TextField(max_length= 2000)
+    language = models.TextField(max_length=20)
+    image = models.ImageField(upload_to='input_field_images/', blank=True, null=True)

@@ -14,4 +14,4 @@ class InputFieldSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = InputField
-        fields = ['id', 'title', 'label', 'content']
+        fields = ['id', 'title', 'label', 'content', 'language', 'image']
