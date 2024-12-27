@@ -27,6 +27,7 @@ const HomePage = () => {
     const filterContents = (props) => {
 
         const result = contents.filter(item=> item.title === props);
+
         const particularBlog = blogs.find(blog => blog.title === props);
 
         const title = particularBlog.title;
@@ -36,12 +37,18 @@ const HomePage = () => {
 
     };
 
+    
+
     const formatDate = (dateString) => {
 
         const date = new Date(dateString);
         const options = {month : 'short', day : 'numeric', year : 'numeric'};
         return date.toLocaleString('en-US', options);
 
+    }
+
+    const authenticate = () => {
+        navigate('/authentication');
     }
 
 
@@ -51,6 +58,8 @@ const HomePage = () => {
         <header>
             <h1 id="home-heading">Blogs</h1>
         </header>
+
+        <button className="write-btn" type="button" onClick={authenticate}>Write</button>
 
         <div className="image-container">
 
@@ -62,7 +71,7 @@ const HomePage = () => {
 
                     <ul className="blogs">
 
-                        <li className="blog-title" onClick={() => filterContents(blog.title)}>
+                        <li className="blog-title-home" onClick={() => filterContents(blog.title)}>
                             {blog.title}
                         </li>
 

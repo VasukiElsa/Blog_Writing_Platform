@@ -60,16 +60,17 @@ const CoverPage = () => {
     return(
 
 
-        <div>
+        <div className="cover-page-container">
+            <h1 className = "cover-title">Create Your Cover</h1>
 
-           <input type="text" className="title-field" name="title" value={header.title} onChange={handleHeaderChange} placeholder='write the title here...'/>
+           <input type="text" className="input-field" name="title" value={header.title} onChange={handleHeaderChange} placeholder='write the title here...'/>
 
-           <textarea className="des-field" name="description" value={header.description} onChange={handleHeaderChange} placeholder='tell your description here...'/>
+           <textarea className="input-field" name="description" value={header.description} onChange={handleHeaderChange} placeholder='tell your description here...'/>
 
-           <input type="file" />
+           <input type="file" className="file-input" />
 
 
-           <button className="submit-btn" onClick={saveCover}>SAVE COVER</button>
+           <button className="save-btn" onClick={saveCover}>SAVE COVER</button>
 
         </div>
 
