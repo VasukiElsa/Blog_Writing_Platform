@@ -95,9 +95,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE' : 'djongo',
-        'NAME' : 'BlogWritingPlatform',
+        'NAME' : 'BlogWritingPlatformdb',
         'CLIENT' : {
-            'host' : '127.0.0.1:27017'
+            #'host' : '127.0.0.1:27017'
+            'host' : 'mongodb:27017' #Here mongodb container is the host
         }
     }
 }
@@ -123,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
+    'http://172.18.0.2:3000'
 )
 
 
