@@ -4,7 +4,6 @@
     padding:0;
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: #333;
-    background-color: white;
     font-size : 20px;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -226,14 +225,16 @@ button:hover{
 
 
 
-.heading-field, .text-field, .code-field{
-
-    font-size: 20px; 
-    padding: 10px; 
-    width: 80%; 
-    border:none;
-    outline:none;
-
+.heading-field, 
+.text-field, 
+.code-field {
+    flex: 1; /* Take up available space */
+    font-size: 20px;
+    padding: 10px;
+    width: 80%; /* Ensures consistent width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
 
 
@@ -247,10 +248,36 @@ button:hover{
     resize: vertical;
 }
 
+
+.remove-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.remove-btn:focus {
+    outline: none;
+    box-shadow: 0px 4px 6px rgba(220, 53, 69, 0.5);
+}
+
+
 .input-wrapper {
-    margin-bottom : 40px;
-    margin-left : 90px; 
-    animation: flyInTop 0.5s ease-out; 
+    display: flex; /* Align children in a row */
+    align-items: center; /* Vertically center the items */
+    gap: 10px; /* Space between the input and button */
+    margin-bottom: 40px;
+    margin-left: 90px;
+    animation: flyInTop 0.5s ease-out;
 }
 
 
@@ -275,16 +302,20 @@ button:hover{
 
 }
 
-.heading-btn:hover, .code-btn:hover, .text-btn:hover, .image-btn{
+.heading-btn:hover, .code-btn:hover, .text-btn:hover, .image-btn:hover{
 
     background-color: #31b0d5; 
 }
 
 .image-preview {
+    display: block;
     max-width: 100%;
     max-height: 200px;
     margin-top: 10px;
+    
 }
+
+
 
 .header-btns {
     top: 0;
