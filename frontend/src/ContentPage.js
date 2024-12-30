@@ -78,6 +78,12 @@ const ContentPage = () => {
 
     };
 
+    const removeFields = (index) => {
+        let data = [...inputFields];
+        data.splice(index, 1);
+        setInputFields(data);
+    }
+
 
     console.log("inputFields state before submit:", inputFields);
 
@@ -131,6 +137,8 @@ const ContentPage = () => {
                                     <input type="text" className="heading-field" name="heading" value={input.content} onChange={event=> handleFormChange(index, event)} 
                                     placeholder='Add Heading'/>
 
+                                    <button className="remove-btn" onClick={()=>removeFields(index)}>Remove</button>
+
                                 </div>
 
                             )
@@ -142,6 +150,8 @@ const ContentPage = () => {
 
                                     <textarea className="text-field" name="text" value={input.content} onChange={ event => handleFormChange(index, event)}
                                     placeholder='Add Text'/>
+
+                                    <button className="remove-btn" onClick={()=>removeFields(index)}>Remove</button>
 
                                 </div>
                             )
@@ -171,6 +181,8 @@ const ContentPage = () => {
                                     onChange={(value) => handleFormChange(index, { target: { value } })} 
                                     />
 
+                                    <button className="remove-btn" onClick={()=>removeFields(index)}>Remove</button>
+
     
                                  </div>
                             )
@@ -183,7 +195,10 @@ const ContentPage = () => {
                                             accept="image/*"
                                             onChange={(event) => handleImageChange(index, event)}
                                         />
-                                        {input.image && <img src={input.image} alt="Preview" className="image-preview" />}
+
+                                        {input.image && (<img src={input.image} alt="Preview" className="image-preview" />)}
+                                        
+                                        <button className="remove-btn" onClick={()=>removeFields(index)}>Remove</button>
                                     </div>
                                 );
                         default:
