@@ -26,8 +26,8 @@ const Documentation = () => {
     
         <nav className = "nav-bar">
             <header className="nav-header">{title}</header>
-            {header.map((input) => (
-                <AnchorLink href={`#${input.content}`} className="nav-link">
+            {header.map((input, index) => (
+                <AnchorLink key={index} href={`#${input.content}`} className="nav-link">
                     {input.content}
                 </AnchorLink>
             ))}
@@ -40,24 +40,24 @@ const Documentation = () => {
             <h2 className="blog-title">{title}</h2>
             <img className="blog-cover" src={`http://127.0.0.1:8000${image}`} alt={title}/>
 
-            {result.map((input) => {
+            {result.map((input, index) => {
 
                 switch(input.label){
                     case "heading":
                         return(
-                            <section className="main-section">
+                            <section key={index} className="main-section">
                                 <header id= {input.content} dangerouslySetInnerHTML={formatValue(input.content)} />
                             </section>
                         );
                     case "text":
                         return(
-                            <section className="main-section">
+                            <section key={index} className="main-section">
                                 <p className="text-section" dangerouslySetInnerHTML={formatValue(input.content)} />
                             </section>
                         );
                     case "code":
                         return(
-                            <div className="syntax-bar">
+                            <div key={index} className="syntax-bar">
                                 <pre>
                                    <code dangerouslySetInnerHTML={formatValue(input.content)} />
                                 </pre>
@@ -66,7 +66,7 @@ const Documentation = () => {
 
                     case "image":
                         return(
-                            <section className="main-section">
+                            <section key={index} className="main-section">
                                 <img className="img-bar" src={`http://127.0.0.1:8000${input.image}`}  alt="preview" />
                             </section>
                         )
