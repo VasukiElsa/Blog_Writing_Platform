@@ -452,7 +452,8 @@ input[type="file"]:hover {
     font-weight: bold;
     cursor : pointer;
     font-size : 30px;
-
+    width : 400px;
+    margin-left: 5px;
 }
 
 .blog-description{
@@ -460,11 +461,15 @@ input[type="file"]:hover {
     font-size : 20px;
     margin-top : 20px;
     line-height: 1.4;
+    width : 400px;
+    margin-left:5px;
 }
 
 .created-at{
     font-size: 15px;
     color : rgb(117, 102, 102);
+    margin-bottom: 20px;
+    margin-left : 5px;
 }
 
 .blog-title{
