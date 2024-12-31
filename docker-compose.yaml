@@ -17,7 +17,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - ./backend/media:/app/media
+      - media-volume:/app/media
   
   frontend:
     build: ./frontend
@@ -32,4 +32,6 @@ networks:
 
 volumes:
   blog-volume:
+    driver: local
+  media-volume:
     driver: local
