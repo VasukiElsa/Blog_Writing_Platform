@@ -5,7 +5,6 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
     color: #333;
     font-size : 20px;
-    line-height: 1.6;
     scroll-behavior: smooth;
   }
 
@@ -472,6 +471,7 @@ input[type="file"]:hover {
     font-size: 60px;
     padding-bottom: 40px;
     margin-top : 65px;
+    line-height: normal;
 }
 
 .blog-cover{
@@ -562,6 +562,7 @@ input[type="file"]:hover {
   padding-left:20px;
   padding-right:150px;
   padding-bottom:0;
+  line-height: 1.6;
   
   }
 
