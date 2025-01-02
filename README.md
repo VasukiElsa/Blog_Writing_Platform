@@ -36,6 +36,12 @@ Then restart the machine to reflect the change.
 **Database**: *mongodb*\
 **Containerization**: *Docker* 
 
+## I pushed my docker images in docker hub:
+---
+[Frontend](https://hub.docker.com/r/vasukielsa/blog_writing_platform_frontend)
+
+[Backend](https://hub.docker.com/r/vasukielsa/blog_writing_platform_backend)
+
 ## Defining Frontend Dockerfile
 ---
 1. Use node:20-alpine as a base image
