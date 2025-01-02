@@ -1,4 +1,4 @@
-# Deploy my three-tier blog-writing application using docker-compose
+# Deploy this three-tier blog-writing application using docker-compose
 ---
 ## Pre-requisite:
 ### 1. Docker
