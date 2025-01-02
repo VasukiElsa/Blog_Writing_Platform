@@ -38,9 +38,9 @@ Then restart the machine to reflect the change.
 
 ## I pushed my docker images in docker hub:
 ---
-[Frontend](https://hub.docker.com/r/vasukielsa/blog_writing_platform_frontend)
+[Frontend Image](https://hub.docker.com/r/vasukielsa/blog_writing_platform_frontend)
 
-[Backend](https://hub.docker.com/r/vasukielsa/blog_writing_platform_backend)
+[Backend Image](https://hub.docker.com/r/vasukielsa/blog_writing_platform_backend)
 
 ## Defining Frontend Dockerfile
 ---
