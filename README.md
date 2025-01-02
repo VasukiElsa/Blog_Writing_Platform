@@ -1,7 +1,7 @@
 # Deploy my three-tier blog-writing application using docker-compose
 ---
-### Pre-requisite:
-# 1. Docker
+## Pre-requisite:
+### 1. Docker
    ```sudo apt install docker.io```
    
    Then add the user to the docker daemon,
@@ -10,11 +10,11 @@
    
 Then restart the machine to reflect the change.
 
-# 2. Docker-Compose
+### 2. Docker-Compose
 
    ```sudo apt install docker-compose```
    
-# Setup and Deployment:
+## Setup and Deployment:
 ---
 
 ### 1. Clone the repository and navigate to the project directory
