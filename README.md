@@ -19,7 +19,7 @@ Then restart the machine to reflect the change.
 
 ### 1. Clone the repository and navigate to the project directory
 
-```git clone <repository-url>```\
+```git clone <repository-url>```
 
 ```cd <project-directory>```
 
