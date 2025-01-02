@@ -1,27 +1,27 @@
 # Workflow of my three-tire application:
 ---
 
-- *Home page* is the index page, which has a grid of blogs each having a cover image, description along with published date.
-- *Axios* fetches all the blogs from db and render it on home page.
-- When a particular blog is clicked, *title of that blog* is send as a prop to filter the blog's content.
-- Then using useNavigate hook, we navigate to *documentation page* along with *title, cover image and its content as a state*.
-- Using *useLocation* hook we destruct the objects in the *documentation page*.
-- In *documentation page*, it dynamically renders content of that blog with *switch-case* logic. *In-page navigation* is provided using *AnchorLink component*.
-- Spaces and line breaks formatting are handled in *documentation page*.
-- In *home page*, it has a *write-blog* button. Admin only have authorization to write blogs. When the *write-blog* btn is clicked, it navigates to the *Authentication Page*.
-- If authenticated, then admin is take to *cover page* or else navigates to the *home page*.
-- In *cover page* we can add *title*, *description* and *cover image* for our blog.
-- When the *save btn* is clicked, *axios* make *post request* to django endpoints. It has a content type of 'multipart/form-data' because of the combination of *json string and image file*.
-- Django *urls.py* check its endpoints and its corresponding *views* are called. It has two views that is *headerView* for handle *cover page* and *inputfieldView* for handle *content page*.
-- After performing *serialization* objects are stored in db and send *status code* as a response to *axios*.
-- Add media root and media urls in *settings.py* and *urls.py* to serve static images.
-- After saving the *cover page*, it navigates to *content page* along with state of *blog title*.
-- Here *blog title* is used as a unique identifier to filter the contents.
-- *Content page* has *Add heading*, *Add Text*, *Add Code*, *Add image* buttons.
-- *Content page* dynamically renders input field with the *switch-case* logic and *Fly-in* animation is applied for input fields.
-- *Image preview* is available when uploading the image in the *content page*.
-- *Monaco editor* is added, when we write a code.
-- When the *Publish Blog* is clicked, it makes a *post request* to django endpoints. Where *image file* is set as a *base64* encoded string.
-- In django, *inputfieldView* handles the *content page* request. *Decode the base64* string into image file with blog-title as a name.
-- After performing *serialization*, it stores object in a db and send *status code* as a response to axios.
-- Using *docker-compose*, we deploy this three-tier application as a *Containerized blog writing application*.
+- **Home page** is the index page, which has a grid of blogs each having a cover image, description along with published date.
+- **Axios** fetches all the blogs from db and render it on home page.
+- When a particular blog is clicked, **title of that blog** is send as a prop to filter the blog's content.
+- Then using **useNavigate** hook, we navigate to **documentation page** along with **title, cover image and its content as a state**.
+- Using **useLocation** hook we destruct the objects in the **documentation page**.
+- In documentation page, it dynamically renders content of that blog with **switch-case** logic. **In-page navigation** is provided using **AnchorLink component**.
+- Spaces and line breaks formatting are handled in documentation page.
+- In home page, it has a **write-blog** button. Admin only have authorization to write blogs. When the *write-blog* btn is clicked, it navigates to the **Authentication Page**.
+- If authenticated, then admin is take to 'cover page' or else navigates to the 'home page'.
+- In **cover page** we can add 'title', 'description' and 'cover image' for our blog.
+- When the **save btn** is clicked, axios make **post request** to django endpoints. It has a content type of 'multipart/form-data' because of the combination of **json string and image file**.
+- Django's **urls.py** check its endpoints and its corresponding **views** are called. It has two views that is **headerView** for handle cover page and **inputfieldView** for handle content page.
+- After performing **serialization** objects are stored in db and send **status code** as a response to axios.
+- Add media root and media urls in settings.py and urls.py to serve static images.
+- After saving the cover page, it navigates to content page along with state of 'blog title'.
+- Here 'blog title' is used as a **unique identifier** to filter the contents.
+- 'Content page' has **Add heading**, **Add Text**, **Add Code**, **Add image** buttons.
+- **Content page** dynamically renders input field with the **switch-case** logic and **Fly-in** animation is applied for input fields.
+- **Image preview** is available when uploading the image in the content page.
+- **Monaco editor** is added, when we write a code.
+- When the **Publish Blog** is clicked, it makes a post request to django endpoints. Where image file is set as a **base64 encoded string**.
+- In django, 'inputfieldView' handles the content page request. **Decode the base64** string into image file with blog-title as a name.
+- After performing serialization, it stores object in a db and send status code as a response to axios.
+- Using **docker-compose**, we deploy this three-tier application as a **Containerized blog writing application**.
