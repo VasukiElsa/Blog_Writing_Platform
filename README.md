@@ -1,14 +1,14 @@
 #Deploy this three-tier blog-writing application using docker-compose
 ---
-##Pre-requisite:
-###1. Docker
-   ```sudo apt install docker.io```
-   Then add the user to the docker daemon,
-   ```sudo usermod -aG docker <username-of-your-machine>```
-Then restart the machine to reflect the change.
+##Pre-requisite:\
+###1. Docker\
+   ```sudo apt install docker.io```\
+   Then add the user to the docker daemon,\
+   ```sudo usermod -aG docker <username-of-your-machine>```\
+Then restart the machine to reflect the change.\
 
-###2. Docker-Compose
-   ```sudo apt install docker-compose```
+###2. Docker-Compose\
+   ```sudo apt install docker-compose```\
    
 #Steps to run the docker-compose command:
 ---
@@ -21,9 +21,9 @@ Step 3 : Run this command,\
 
 ##Tech Stack:
 ---
-**Frontend**: *Reactjs*
-**Backend**: *Django*
-**Database**: *mongodb*
+**Frontend**: *Reactjs*\
+**Backend**: *Django*\
+**Database**: *mongodb*\
 **Containerization**: *Docker* 
 
 ##Workflow of my three-tire application:
