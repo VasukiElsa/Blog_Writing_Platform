@@ -1,6 +1,6 @@
 # Deploy my three-tier blog-writing application using docker-compose
 ---
-## Pre-requisite:
+### Pre-requisite:
 # 1. Docker
    ```sudo apt install docker.io```
    
@@ -19,7 +19,8 @@ Then restart the machine to reflect the change.
 
 ### 1. Clone the repository and navigate to the project directory
 
-```git clone <repository-url>```
+```git clone <repository-url>```\
+
 ```cd <project-directory>```
 
 ### 2. Build and run the containers
